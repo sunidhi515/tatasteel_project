@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>reaction tester</title>
+        <style>
+               #shape{
+                   width:200px;
+                   height:200px;
+                   background-color: rgb(226, 99, 116);
+                   margin:80px;
+                   display:none;
+
+               }
+        
+        
+        </style>
+    </head>
+    <body>
+           <p>your time: <span id="takentime"></span></p>
+           <div id="shape"></div>
+           <script>
+               var start=new Date().getTime(); 
+               function shapereappear()
+               {
+                   document.getElementById("shape").style.display="block";
+                   start=new Date().getTime(); 
+               }
+               setTimeout(shapereappear,Math.random() * 2000);
+
+                    document.getElementById("shape").onclick=function()
+                    {
+
+                        document.getElementById("shape").style.display="none";
+                        var end=new Date().getTime();
+                        var timetaken=(end-start)/1000;
+                        document.getElementById("takentime").innerHTML=timetaken+"sec";
+                    }
+
+
+
+
+
+
+
+        </script>
+
+
+
+
+
+
+    </body>
+</html>
